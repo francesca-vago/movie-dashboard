@@ -41,14 +41,14 @@ const RootQuery = new GraphQLObjectType({
                 id: {type: GraphQLString}
             },
             resolve(parent, args) {
-                return axios.get(`http://localhost:3000/users/${args.id}`)
+                return axios.get(`http://localhost:4000/users/${args.id}`)
                             .then(res => res.data);
             }
         },
         users: {
             type: new GraphQLList(UserType),
             resolve(parent, args) {
-                return axios.get(`http://localhost:3000/users`)
+                return axios.get(`http://localhost:4000/users`)
                 .then(res => res.data);
             }
         },
@@ -58,14 +58,14 @@ const RootQuery = new GraphQLObjectType({
                 id: {type: GraphQLString}
             },
             resolve(parent, args) {
-                return axios.get(`http://localhost:3000/books/${args.id}`)
+                return axios.get(`http://localhost:4000/books/${args.id}`)
                             .then(res => res.data);
             }
         },
         books: {
             type: new GraphQLList(UserType),
             resolve(parent, args) {
-                return axios.get(`http://localhost:3000/books`)
+                return axios.get(`http://localhost:4000/books`)
                 .then(res => res.data);
             }
         }
